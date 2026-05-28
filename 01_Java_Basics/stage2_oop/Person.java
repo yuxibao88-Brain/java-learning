@@ -1,4 +1,4 @@
-package com.learn.stage2_oop;
+package stage2_oop;
 
 /**
  * ============================================

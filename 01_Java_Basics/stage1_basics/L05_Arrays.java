@@ -1,4 +1,4 @@
-package com.learn.stage1_basics;
+package stage1_basics;
 
 import java.util.Arrays;  // 导入数组工具类
 

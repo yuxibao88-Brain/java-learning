@@ -1,4 +1,4 @@
-package com.learn.stage1_basics;
+package stage1_basics;
 
 /**
  * ============================================ 📖 Java 学习第六课：字符串深入

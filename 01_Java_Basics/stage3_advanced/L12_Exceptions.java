@@ -1,4 +1,4 @@
-package com.learn.stage3_advanced;
+package stage3_advanced;
 
 import java.io.*;
 import java.util.Scanner;
