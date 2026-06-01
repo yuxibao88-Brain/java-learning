@@ -1,104 +1,96 @@
 package stage1_basics;
 
 /**
- * ============================================ 📖 Java 学习第六课：字符串深入
+ * ============================================
+ * 📖 Java 学习第六课：字符串（String）
  * ============================================
  *
- * 【String 特点】 - String 是不可变的（一旦创建，内容不能改） - 每次"修改"都会创建新的字符串对象
+ * ⭐ 必须掌握：
+ *   - 字符串比较用 .equals()，不能用 ==（第三课已学）
+ *   - 常用方法：length() trim() contains() split() replace()
+ *   - String.format() 格式化拼接
+ *   - StringBuilder：循环中拼接字符串必须用它
  *
- * 【StringBuilder】 - 可变的字符串，适合频繁拼接的场景 - 比 String + String 效率高很多
- *
- * 【常用 String 方法】 length() — 长度 charAt(i) — 第 i 个字符 substring(i, j) — 截取 [i, j)
- * 的子串 indexOf(s) — 查找子串位置 contains(s) — 是否包含 split(regex) — 分割 trim() — 去首尾空格
- * toLowerCase() — 转小写 toUpperCase() — 转大写 replace(a, b) — 替换
+ * 💡 了解即可（用到再查）：
+ *   - charAt() substring() indexOf() 等不太常用的方法
+ *   - 不可变性原理（知道结论就行：String 每次修改都产生新对象）
  */
 public class L06_Strings {
 
     public static void main(String[] args) {
-        // ==================== 1. 字符串不可变性 ====================
-        System.out.println("【字符串不可变性】");
-
-        String s1 = "Hello";
-        String s2 = s1;         // s2 指向 s1 的同一个对象
-        s1 = s1 + " World";     // s1 指向新对象，原来的 "Hello" 还在
-
-        System.out.println("s1 = " + s1);  // "Hello World"
-        System.out.println("s2 = " + s2);  // "Hello"（没变！证明不可变性）
-
-        // ==================== 2. 常用 String 方法 ====================
-        System.out.println("\n【常用 String 方法】");
+        // ==================== ⭐ 1. 最常用的 String 方法 ====================
+        System.out.println("【最常用的 String 方法】");
 
         String text = "  Hello Java World!  ";
 
         System.out.println("原字符串: \"" + text + "\"");
-        System.out.println("长度: " + text.length());
-        System.out.println("第3个字符: " + text.charAt(3));
-        System.out.println("去空格: \"" + text.trim() + "\"");
+        System.out.println("长度: " + text.length());                    // 包含空格的长度
+        System.out.println("去首尾空格: \"" + text.trim() + "\"");        // 开发中处理用户输入必用
+        System.out.println("是否包含 Java: " + text.contains("Java"));   // 判断是否包含
+        System.out.println("替换: " + text.replace("Java", "Python"));   // 替换内容
         System.out.println("转大写: " + text.toUpperCase());
         System.out.println("转小写: " + text.toLowerCase());
-        System.out.println("截取[2,7): " + text.substring(2, 7));
-        System.out.println("是否包含 Java: " + text.contains("Java"));
-        System.out.println("Java 的位置: " + text.indexOf("Java"));
-        System.out.println("替换: " + text.replace("Java", "Python"));
 
-        // ==================== 3. 字符串分割 ====================
-        System.out.println("\n【字符串分割】");
+        // ==================== ⭐ 2. 字符串分割（开发超常用）====================
+        System.out.println("\n【字符串分割 split()】");
 
+        // 场景：后端返回逗号分隔的数据，需要拆开处理
         String csv = "苹果,香蕉,橙子,葡萄";
-        String[] fruits = csv.split(",");  // 用逗号分割
+        String[] fruits = csv.split(",");  // 用逗号分割成数组
 
-        for (int i = 0; i < fruits.length; i++) {
-            System.out.println("第" + (i + 1) + "个: " + fruits[i]);
+        for (String fruit : fruits) {
+            System.out.println("→ " + fruit);
         }
 
-        // ==================== 4. StringBuilder（高效拼接） ====================
-        System.out.println("\n【StringBuilder 高效拼接】");
+        // 实际开发常见：按多种分隔符分割
+        String data = "张三|25|北京";
+        String[] parts = data.split("\\|");  // | 是特殊字符，需要 \\| 转义
+        System.out.println("姓名: " + parts[0] + "，年龄: " + parts[1] + "，城市: " + parts[2]);
 
-        // ❌ 低效方式：每次 + 都创建新对象
-        long start1 = System.nanoTime();
-        String result1 = "";
-        for (int i = 0; i < 50000; i++) {
-            result1 += "a";
-        }
-        long time1 = System.nanoTime() - start1;
-        System.out.println("String + 耗时: " + time1 / 1000000.0 + " ms");
-
-        // ✅ 高效方式：StringBuilder
-        long start2 = System.nanoTime();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 50000; i++) {
-            sb.append("a");  // append 在同一个对象上追加
-        }
-        String result2 = sb.toString();  // 最后转成 String
-        long time2 = System.nanoTime() - start2;
-        System.out.println("StringBuilder 耗时: " + time2 / 1000000.0 + " ms");
-        System.out.println("效率提升: " + (time1 / time2) + " 倍 🚀");
-
-        // StringBuilder 常用方法
-        StringBuilder builder = new StringBuilder("Hello");
-        builder.append(" Java");        // 追加
-        builder.append("!");            // 继续追加
-        builder.insert(5, " Beautiful"); // 在位置5插入
-        builder.replace(0, 5, "Hi");     // 替换 [0,5)
-        builder.delete(3, 13);           // 删除 [3,13)
-
-        System.out.println("\nStringBuilder 操作结果: " + builder.toString());
-
-        // ==================== 5. 格式化字符串 ====================
-        System.out.println("\n【字符串格式化】");
+        // ==================== ⭐ 3. 字符串格式化（推荐！）====================
+        System.out.println("\n【字符串格式化 String.format()】");
 
         String name = "小明";
         int age = 18;
         double score = 95.5;
 
-        // String.format() 用法
-        String formatted = String.format(
-                "姓名: %s, 年龄: %d, 成绩: %.1f",
-                name, age, score
-        );
-        System.out.println(formatted);
+        // String.format() 比 + 拼接更清晰，尤其变量多的时候
+        // %s = 字符串，%d = 整数，%.1f = 保留1位小数
+        String info = String.format("姓名: %s, 年龄: %d, 成绩: %.1f", name, age, score);
+        System.out.println(info);
 
-        // 也可以用 System.out.printf 直接输出
+        // 也可以直接输出
         System.out.printf("我叫 %s，今年 %d 岁，考了 %.1f 分\n", name, age, score);
+
+        // ==================== ⭐ 4. StringBuilder（循环拼接必用！）====================
+        System.out.println("\n【StringBuilder（循环拼接必用！）】");
+
+        // ❌ 错误写法：循环中用 + 拼接，每次都创建新对象，非常慢
+        // String result = "";
+        // for (...) { result += "a"; }  // 千万别这样写！
+
+        // ✅ 正确写法：用 StringBuilder
+        StringBuilder sb = new StringBuilder();
+        String[] cities = {"北京", "上海", "广州", "深圳"};
+
+        for (int i = 0; i < cities.length; i++) {
+            sb.append(cities[i]);
+            if (i < cities.length - 1) {
+                sb.append("、");  // 最后一个不加顿号
+            }
+        }
+        System.out.println("城市: " + sb.toString());
+        // 输出：城市: 北京、上海、广州、深圳
+
+        // ==================== 💡 5. 其它方法（了解即可）====================
+        System.out.println("\n【其它方法（用到再查）】");
+
+        String s = "Hello Java";
+        System.out.println("第0个字符: " + s.charAt(0));              // H
+        System.out.println("截取[6,10): " + s.substring(6, 10));     // Java
+        System.out.println("Java的位置: " + s.indexOf("Java"));       // 6
+        System.out.println("是否以Hello开头: " + s.startsWith("Hello")); // true
+        System.out.println("是否以Java结尾: " + s.endsWith("Java"));     // true
+        System.out.println("是否为空: " + s.isEmpty());               // false
     }
 }

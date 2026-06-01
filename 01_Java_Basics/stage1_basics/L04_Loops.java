@@ -5,33 +5,29 @@ package stage1_basics;
  * 📖 Java 学习第四课：循环
  * ============================================
  *
- * 【三种循环】
- * 1. for：知道循环次数时使用
- *    for (初始化; 条件; 更新) { 循环体 }
+ * ⭐ 必须掌握：
+ *   - for 循环：for (初始化; 条件; 更新) { ... }
+ *   - 增强 for（foreach）：for (元素 : 数组/集合) { ... }  ← 开发最常用！
+ *   - break：跳出整个循环
+ *   - continue：跳过本次，进入下一次
  *
- * 2. while：不知道循环次数，先判断再执行
- *    while (条件) { 循环体 }
- *
- * 3. do-while：至少执行一次，先执行再判断
- *    do { 循环体 } while (条件);
- *
- * 【控制关键字】
- *   break：立即结束循环
- *   continue：跳过本次循环，继续下一次
+ * 💡 了解即可：
+ *   - while / do-while：用得较少，遇到再查
+ *   - 嵌套循环：理解概念即可，复杂逻辑让 AI 帮写
  */
 public class L04_Loops {
 
     public static void main(String[] args) {
-        // ==================== 1. for 循环 ====================
-        System.out.println("【for 循环 — 打印 1~5】");
+        // ==================== ⭐ 1. 基础 for 循环 ====================
+        System.out.println("=== 1. 基础 for 循环 ===");
 
+        // for (起点; 终点条件; 每次怎么变)
         for (int i = 1; i <= 5; i++) {
-            // i++ 等价于 i = i + 1
             System.out.println("第 " + i + " 次循环");
         }
 
-        // ==================== 2. for 循环 — 累加求和 ====================
-        System.out.println("\n【for 循环 — 计算 1 到 100 的和】");
+        // ==================== ⭐ 2. 累加求和（for 经典用法）====================
+        System.out.println("\n=== 2. 累加求和 (1~100) ===");
 
         int sum = 0;
         for (int i = 1; i <= 100; i++) {
@@ -39,66 +35,53 @@ public class L04_Loops {
         }
         System.out.println("1 + 2 + ... + 100 = " + sum);
 
-        // 高斯公式验证
-        System.out.println("高斯公式验证: " + (1 + 100) * 100 / 2);
+        // ==================== ⭐ 3. 增强 for（开发最常用！）====================
+        System.out.println("\n=== 3. 增强 for 循环（开发最常用！）===");
 
-        // ==================== 3. for 循环 — 九九乘法表 ====================
-        System.out.println("\n【九九乘法表】");
+        String[] fruits = {"🍎 苹果", "🍌 香蕉", "🍊 橙子", "🍇 葡萄"};
 
-        for (int i = 1; i <= 9; i++) {
-            for (int j = 1; j <= i; j++) {  // 嵌套循环
-                System.out.print(j + "×" + i + "=" + (i * j) + "\t");
-            }
-            System.out.println();  // 换行
+        // 语法：for (元素类型 变量名 : 数组或集合)
+        // 自动取出每个元素，不需要手动管理索引
+        for (String fruit : fruits) {
+            System.out.println("水果: " + fruit);
         }
 
-        // ==================== 4. while 循环 ====================
-        System.out.println("\n【while 循环 — 猜数字模拟】");
-
-        int target = 7;
-        int guess = 1;
-        while (guess != target) {
-            System.out.println("猜 " + guess + " → 不对，再试试！");
-            guess++;
+        // 💡 对比：普通 for 需要手动管 i（需要索引时才用）
+        System.out.println("\n--- 普通 for 对比（需要索引时用）---");
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println("第" + (i + 1) + "个: " + fruits[i]);
         }
-        System.out.println("猜 " + guess + " → 猜对了！🎯");
 
-        // ==================== 5. do-while 循环 ====================
-        System.out.println("\n【do-while 循环 — 至少执行一次】");
-
-        int count = 0;
-        do {
-            System.out.println("count = " + count + "（至少会打印一次）");
-            count++;
-        } while (count < 3);
-
-        // ==================== 6. break 和 continue ====================
-        System.out.println("\n【break — 遇到 5 就停止】");
+        // ==================== ⭐ 4. break 和 continue ====================
+        System.out.println("\n=== 4. break（退出循环）===");
 
         for (int i = 1; i <= 10; i++) {
             if (i == 5) {
-                System.out.println("遇到 5，break！");
-                break;  // 立即跳出循环
+                System.out.println("遇到 5，break 退出！");
+                break;  // 直接跳出整个循环
             }
             System.out.print(i + " ");
         }
 
-        System.out.println("\n\n【continue — 跳过偶数】");
+        System.out.println("\n\n=== 5. continue（跳过一次）===");
 
+        // 只打印奇数
         for (int i = 1; i <= 10; i++) {
             if (i % 2 == 0) {
-                continue;  // 跳过本次循环，进入下一次
+                continue;  // 跳过偶数，进入下一次循环
             }
             System.out.print(i + " ");
         }
 
-        // ==================== 7. 增强 for 循环（foreach） ====================
-        System.out.println("\n\n【增强 for 循环 — 遍历数组】");
+        // ==================== 💡 6. 嵌套循环（了解即可）====================
+        System.out.println("\n\n=== 6. 嵌套循环 — 九九乘法表（了解即可）===");
 
-        String[] fruits = {"🍎 苹果", "🍌 香蕉", "🍊 橙子", "🍇 葡萄"};
-        // 语法：for (元素类型 变量名 : 数组或集合)
-        for (String fruit : fruits) {
-            System.out.println("水果: " + fruit);
+        // 外层走一步，内层走一圈
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "×" + i + "=" + (i * j) + "\t");
+            }
+            System.out.println();
         }
     }
 }

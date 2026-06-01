@@ -7,113 +7,112 @@ import java.util.Arrays;  // 导入数组工具类
  * 📖 Java 学习第五课：数组
  * ============================================
  *
- * 【数组的特点】
- *   - 存放相同类型的多个数据
- *   - 长度固定，创建后不可改变
- *   - 索引从 0 开始
+ * ⭐ 必须掌握：
+ *   - 数组创建：int[] arr = {1, 2, 3};（最常用写法）
+ *   - 访问元素：arr[0]（索引从 0 开始！）
+ *   - 数组长度：arr.length
+ *   - 遍历数组：for 循环 或 增强 for
+ *   - 工具方法：Arrays.sort()、Arrays.toString()
  *
- * 【数组的创建方式】
- *   1. int[] arr = new int[5];              // 先声明，后赋值
- *   2. int[] arr = {1, 2, 3, 4, 5};        // 声明同时赋值
- *   3. int[] arr = new int[]{1, 2, 3};     // 匿名数组
+ * 💡 了解即可：
+ *   - 二维数组：实际开发用得不多，遇到再查
+ *   - 手写排序算法：面试可能问，开发中直接用 Arrays.sort()
  *
- * 【常见操作】
- *   - arr.length：获取数组长度
- *   - arr[i]：访问第 i 个元素（索引从 0 开始）
- *   - Arrays.sort(arr)：排序
- *   - Arrays.toString(arr)：转成字符串显示
+ * 💡 预告：
+ *   实际开发中更常用 ArrayList（可变长度），后面会学到
  */
 public class L05_Arrays {
 
     public static void main(String[] args) {
-        // ==================== 1. 一维数组 ====================
-        System.out.println("【一维数组】");
+        // ==================== ⭐ 1. 创建数组 ====================
+        System.out.println("【创建数组】");
 
-        // 方式1：先创建，再逐个赋值
-        int[] scores = new int[5];  // 长度为 5 的整型数组，默认值都是 0
-        scores[0] = 95;
-        scores[1] = 88;
-        scores[2] = 76;
-        scores[3] = 92;
-        scores[4] = 85;
+        // ✅ 方式1（最常用）：直接赋值
+        int[] scores = {95, 88, 76, 92, 85};
+        String[] names = {"张三", "李四", "王五"};
 
-        System.out.println("数组长度: " + scores.length);
-        System.out.println("第1个元素: " + scores[0]);
+        // 方式2：先创建空数组，再赋值（知道长度但不知道值时用）
+        int[] data = new int[3];  // 默认值都是 0
+        data[0] = 10;
+        data[1] = 20;
+        data[2] = 30;
 
-        // 遍历数组打印
-        System.out.print("成绩: ");
+        // ==================== ⭐ 2. 访问和遍历 ====================
+        System.out.println("\n【访问和遍历】");
+
+        System.out.println("数组长度: " + scores.length);     // 5
+        System.out.println("第1个元素: " + scores[0]);         // 95（索引从 0 开始！）
+        System.out.println("最后一个: " + scores[scores.length - 1]);  // 85
+
+        // 遍历方式1：普通 for（需要索引时用）
+        System.out.print("普通for: ");
         for (int i = 0; i < scores.length; i++) {
             System.out.print(scores[i] + " ");
         }
         System.out.println();
 
-        // 方式2：声明同时赋值（最常用）
-        String[] names = {"张三", "李四", "王五", "赵六"};
-        System.out.println("学生: " + Arrays.toString(names));  // 快速打印数组
+        // 遍历方式2：增强 for（不需要索引时用，更简洁 ✅）
+        System.out.print("增强for: ");
+        for (int s : scores) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
 
-        // ==================== 2. 数组常见操作 ====================
-        System.out.println("\n【数组常见操作】");
+        // ==================== ⭐ 3. 常用工具方法（Arrays 类）====================
+        System.out.println("\n【Arrays 工具方法】");
 
         int[] nums = {5, 2, 8, 1, 9, 3};
 
-        // 排序
+        // 快速打印数组（调试必备！）
+        System.out.println("原数组: " + Arrays.toString(nums));
+
+        // 排序（从小到大，原地修改）
         Arrays.sort(nums);
         System.out.println("排序后: " + Arrays.toString(nums));
 
-        // 求和
+        // 排序后，最小值和最大值一目了然
+        System.out.println("最小值: " + nums[0]);
+        System.out.println("最大值: " + nums[nums.length - 1]);
+
+        // ==================== ⭐ 4. 数组常见操作 ====================
+        System.out.println("\n【常见操作：求和、平均值】");
+
         int sum = 0;
-        for (int n : nums) {  // 增强 for 循环
+        for (int n : nums) {
             sum += n;
         }
         System.out.println("总和: " + sum);
 
-        // 求和、平均值
+        // ⚠️ 注意：两个 int 相除会丢失小数！要用 (double) 强转
         double avg = (double) sum / nums.length;
         System.out.println("平均值: " + avg);
 
-        // 最大值、最小值（排序后很方便）
-        System.out.println("最小值: " + nums[0]);
-        System.out.println("最大值: " + nums[nums.length - 1]);
+        // ==================== ⚠️ 5. 常见错误：数组越界 ====================
+        System.out.println("\n【⚠️ 常见错误】");
+        System.out.println("数组长度: " + scores.length);
+        System.out.println("最大索引: " + (scores.length - 1));
+        // scores[5]  // ❌ 长度为5，索引范围是 0~4，访问 5 会报 ArrayIndexOutOfBoundsException！
+        System.out.println("提示: 长度为5的数组，索引范围是 0~4，访问 5 会报错！");
 
-        // ==================== 3. 二维数组（矩阵） ====================
-        System.out.println("\n【二维数组（矩阵）】");
+        // ==================== 💡 6. 二维数组（了解即可）====================
+        System.out.println("\n【二维数组（了解即可）】");
 
-        // 3行4列的矩阵
         int[][] matrix = {
-            {1, 2, 3, 4},
-            {5, 6, 7, 8},
-            {9, 10, 11, 12}
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
         };
 
-        System.out.println("矩阵: " + matrix.length + " 行 × " + matrix[0].length + " 列");
-        System.out.println("第2行第3列: " + matrix[1][2]);  // 值为 7
+        System.out.println("行数: " + matrix.length);          // 3
+        System.out.println("列数: " + matrix[0].length);       // 3
+        System.out.println("第2行第3列: " + matrix[1][2]);      // 6
 
-        // 遍历二维数组
-        System.out.println("完整矩阵:");
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "\t");
+        // 遍历二维数组：双重 for 循环
+        for (int[] row : matrix) {
+            for (int val : row) {
+                System.out.print(val + "\t");
             }
             System.out.println();
         }
-
-        // ==================== 4. 数组练习题：冒泡排序 ====================
-        System.out.println("\n【冒泡排序（手写排序算法）】");
-
-        int[] unsorted = {64, 34, 25, 12, 22, 11, 90};
-        System.out.println("排序前: " + Arrays.toString(unsorted));
-
-        // 冒泡排序：每次把最大的"冒"到最后面
-        for (int i = 0; i < unsorted.length - 1; i++) {
-            for (int j = 0; j < unsorted.length - 1 - i; j++) {
-                if (unsorted[j] > unsorted[j + 1]) {
-                    // 交换两个元素
-                    int temp = unsorted[j];
-                    unsorted[j] = unsorted[j + 1];
-                    unsorted[j + 1] = temp;
-                }
-            }
-        }
-        System.out.println("排序后: " + Arrays.toString(unsorted));
     }
 }

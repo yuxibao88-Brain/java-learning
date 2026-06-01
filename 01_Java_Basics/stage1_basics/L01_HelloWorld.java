@@ -1,24 +1,29 @@
 package stage1_basics;
 
 /**
- * ============================================ 📖 Java 学习第一课：Hello World
+ * ============================================
+ * 📖 Java 学习第一课：Hello World
  * ============================================
  *
- * 【知识点】 
- * 1. package：声明该类属于哪个包（类似文件夹），方便组织代码
- * 2. public class：定义一个公开的类，类名必须和文件名一致
- * 3. public static void main(String[] args)：Java 程序的入口方法（固定写法）
+ * ⭐ 必须掌握：
+ *   1. main 方法是程序入口（固定写法，记住就行）
+ *   2. System.out.println() 打印并换行
+ *   3. System.out.print()   打印不换行
+ *   4. 类名必须和文件名一致
  *
- * 【运行方式】 
- * 编译：javac -d out 01_Java_Basics/stage1_basics/L01_HelloWorld.java 
- * 运行：java -cp out stage1_basics.L01_HelloWorld
+ * 💡 了解即可：
+ *   - package：声明类属于哪个包（类似文件夹归类）
  */
 public class L01_HelloWorld {
 
     public static void main(String[] args) {
-        // 让电脑在屏幕上打印一句话
+        // println = print + line（打印后自动换行）
         System.out.println("Hello World!");
-
         System.out.println("Java is fun!");
+
+        // print 不换行，后面的内容会紧跟其后
+        System.out.print("Hello, ");
+        System.out.print("Antigravity!");
+        // 输出结果：Hello, Antigravity!（在同一行）
     }
 }
