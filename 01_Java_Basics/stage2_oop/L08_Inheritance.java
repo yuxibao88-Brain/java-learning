@@ -21,6 +21,7 @@ package stage2_oop;
  */
 
 // ========== ⭐ 父类 ==========
+@SuppressWarnings("all")
 class Animal {
     protected String name;  // protected：子类可以访问，外部不行
     protected int age;

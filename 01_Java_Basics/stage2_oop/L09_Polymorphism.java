@@ -22,6 +22,7 @@ package stage2_oop;
 
 // ========== ⭐ 抽象类：形状 ==========
 // abstract = 不能被 new，只能被继承
+@SuppressWarnings("all")
 abstract class Shape {
     protected String name;
 
@@ -166,6 +167,7 @@ public class L09_Polymorphism {
 }
 
 // ========== static 工具类示例 ==========
+@SuppressWarnings("all")
 class MathUtils {
     // static 常量
     public static final double PI = 3.14159;
@@ -177,6 +179,7 @@ class MathUtils {
 }
 
 // ========== final 类示例（了解即可）==========
+@SuppressWarnings("all")
 final class FinalExample {
     private final String name = "不变的名称";
 

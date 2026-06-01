@@ -3,23 +3,15 @@ package stage1_basics;
 import java.util.Arrays;  // 导入数组工具类
 
 /**
+ * ============================================ 📖 Java 学习第五课：数组
  * ============================================
- * 📖 Java 学习第五课：数组
- * ============================================
  *
- * ⭐ 必须掌握：
- *   - 数组创建：int[] arr = {1, 2, 3};（最常用写法）
- *   - 访问元素：arr[0]（索引从 0 开始！）
- *   - 数组长度：arr.length
- *   - 遍历数组：for 循环 或 增强 for
- *   - 工具方法：Arrays.sort()、Arrays.toString()
+ * ⭐ 必须掌握： - 数组创建：int[] arr = {1, 2, 3};（最常用写法） - 访问元素：arr[0]（索引从 0 开始！） -
+ * 数组长度：arr.length - 遍历数组：for 循环 或 增强 for - 工具方法：Arrays.sort()、Arrays.toString()
  *
- * 💡 了解即可：
- *   - 二维数组：实际开发用得不多，遇到再查
- *   - 手写排序算法：面试可能问，开发中直接用 Arrays.sort()
+ * 💡 了解即可： - 二维数组：实际开发用得不多，遇到再查 - 手写排序算法：面试可能问，开发中直接用 Arrays.sort()
  *
- * 💡 预告：
- *   实际开发中更常用 ArrayList（可变长度），后面会学到
+ * 💡 预告： 实际开发中更常用 ArrayList（可变长度），后面会学到
  */
 public class L05_Arrays {
 
@@ -30,12 +22,14 @@ public class L05_Arrays {
         // ✅ 方式1（最常用）：直接赋值
         int[] scores = {95, 88, 76, 92, 85};
         String[] names = {"张三", "李四", "王五"};
+        System.out.println("姓名: " + Arrays.toString(names));
 
         // 方式2：先创建空数组，再赋值（知道长度但不知道值时用）
         int[] data = new int[3];  // 默认值都是 0
         data[0] = 10;
         data[1] = 20;
         data[2] = 30;
+        System.out.println("data: " + Arrays.toString(data));
 
         // ==================== ⭐ 2. 访问和遍历 ====================
         System.out.println("\n【访问和遍历】");

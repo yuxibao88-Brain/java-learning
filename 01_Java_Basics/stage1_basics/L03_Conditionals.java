@@ -15,6 +15,7 @@ package stage1_basics;
  *   - switch：多分支精确匹配时用
  *   - 三元运算符：简单的 if-else 简写
  */
+@SuppressWarnings("all")  // 本文件有意使用 new String() 和 null 来演示对比
 public class L03_Conditionals {
 
     public static void main(String[] args) {

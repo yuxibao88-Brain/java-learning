@@ -25,6 +25,7 @@ package stage2_oop;
  */
 
 // ========== ⭐ 定义接口：飞行能力 ==========
+@SuppressWarnings("all")
 interface Flyable {
     // 接口方法默认 public abstract，不需要写方法体
     void fly();
@@ -36,6 +37,7 @@ interface Flyable {
 }
 
 // ========== ⭐ 定义接口：游泳能力 ==========
+@SuppressWarnings("all")
 interface Swimmable {
     void swim();
 
