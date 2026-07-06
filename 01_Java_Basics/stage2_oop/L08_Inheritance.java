@@ -76,5 +76,10 @@ public class L08_Inheritance {
 
         dog.makeSound();  // 汪汪汪（Dog 自己的版本）
         cat.makeSound();  // 喵喵喵（Cat 自己的版本）
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：新增一个 Fish 类继承 Animal，重写 makeSound() 输出 "咕噜咕噜~ 🐟"
+        // 练习 2：给 Dog 类加一个 fetch() 方法，测试只有 Dog 能调用
+        // 练习 3：在 Dog 的 makeSound() 里先调用 super.makeSound()，再输出自己的内容
     }
 }

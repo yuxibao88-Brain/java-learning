@@ -4,6 +4,22 @@
 
 用 Java 基础知识做一个命令行小程序，把变量、循环、集合、方法、类和异常处理串起来。
 
+## 开始之前
+
+确保你已经学完 L01~L12 课程，理解了变量、条件、循环、数组、字符串、方法、类与对象、集合、异常处理。
+
+## 如何开始
+
+1. 阅读 [GUIDE.md](GUIDE.md) 了解分步指南
+2. 运行脚手架代码 [TaskManager.java](TaskManager.java)（已实现菜单、新增、查看功能）
+3. 按 GUIDE.md 的步骤，逐步实现标记完成、删除、搜索、异常处理
+
+```bash
+cd projects/01_console_task_manager
+javac TaskManager.java
+java projects._01_console_task_manager.TaskManager
+```
+
 ## 建议功能
 
 - 新增任务；

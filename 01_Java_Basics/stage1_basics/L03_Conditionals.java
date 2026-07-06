@@ -56,5 +56,11 @@ public class L03_Conditionals {
         // 安全写法：常量放前面，防止 null 报错
         String input = null;
         System.out.println("安全写法: " + "hello".equals(input));  // false，不报错
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：写一个成绩评级程序
+        //   score >= 90 → "A"，>= 80 → "B"，>= 70 → "C"，>= 60 → "D"，< 60 → "F"
+        // 练习 2：写一个判断闰年的程序（能被4整除且不能被100整除，或者能被400整除）
+        // 练习 3：定义 String password = "123456"，用 equals 判断用户输入是否匹配
     }
 }

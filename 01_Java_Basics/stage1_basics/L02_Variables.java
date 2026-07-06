@@ -46,5 +46,11 @@ public class L02_Variables {
 
         final int MAX_RETRY = 3;  // final = 不可修改，命名全大写
         System.out.println("最大重试: " + MAX_RETRY);
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：定义 4 个变量存储你的个人信息（姓名、年龄、身高、是否学生）
+        //   提示：String name = "xxx";  int age = xx;  double height = x.xx;  boolean isStudent = true/false;
+        // 练习 2：用 println 拼出一句话："我叫xxx，今年xx岁，身高x.xx米"
+        // 练习 3：试试 (int) 9.99 和 (int) 0.1 的结果，理解"强转丢弃小数"
     }
 }

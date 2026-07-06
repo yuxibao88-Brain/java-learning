@@ -56,5 +56,14 @@ public class L04_Loops {
             System.out.print(i + " ");
         }
         System.out.println("← continue 跳过偶数");
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：打印 9x9 乘法表（提示：嵌套 for 循环）
+        //   1x1=1
+        //   1x2=2  2x2=4
+        //   1x3=3  2x3=6  3x3=9
+        //   ...
+        // 练习 2：用 for 循环计算 10 的阶乘（10! = 10 x 9 x 8 x ... x 1）
+        // 练习 3：用增强 for 遍历 {"Java", "Python", "Go", "Rust"}，打印每个语言和索引
     }
 }

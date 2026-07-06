@@ -82,5 +82,10 @@ public class L10_Interfaces {
 
         System.out.println("\n💡 Spring Boot 模式：");
         System.out.println("  interface UserService → class UserServiceImpl");
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：新增 Runnable 接口，让 Duck 同时实现 Flyable、Swimmable、Runnable
+        // 练习 2：写一个方法 testFly(Flyable f)，传入 Bird 和 Duck 测试
+        // 练习 3：创建 Flyable[] 数组，放入所有能飞的对象，遍历调用 fly()
     }
 }

@@ -79,5 +79,10 @@ public class L09_Polymorphism {
             total += s.getArea();
         }
         System.out.printf("总面积: %.2f\n", total);
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：新增 Triangle 类继承 Shape，实现 getArea()（面积 = 底 x 高 / 2）
+        // 练习 2：在 shapes 数组里加入一个 Triangle，验证多态能正常工作
+        // 练习 3：给 Shape 加一个抽象方法 getPerimeter()（周长），让所有子类实现
     }
 }

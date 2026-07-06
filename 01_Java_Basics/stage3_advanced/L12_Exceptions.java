@@ -64,4 +64,10 @@ public class L12_Exceptions {
         }
         System.out.println("年龄 " + age + " 验证通过 ✅");
     }
+
+    // ========== 🏋️ 动手练习 ==========
+    // 练习 1：写一个 safeDivide(int a, int b) 方法，b=0 时返回 0 而不是抛异常
+    // 练习 2：写一个 parseIntOrZero(String s)，解析失败返回 0 而不是崩溃
+    // 练习 3：写一个 validateEmail(String email) 方法，
+    //   不包含 "@" 时抛出 IllegalArgumentException
 }

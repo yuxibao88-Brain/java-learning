@@ -61,5 +61,11 @@ public class L11_Collections {
         for (Map.Entry<String, Integer> entry : scores.entrySet()) {
             System.out.println("  " + entry.getKey() + " → " + entry.getValue());
         }
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：用 ArrayList 存储 5 个学生姓名，删除第 2 个，再在开头插入一个新学生
+        // 练习 2：用 HashMap 存储 "语文": 85, "数学": 92, "英语": 78，
+        //   计算总分和平均分，找出最高分的科目
+        // 练习 3：用 ArrayList 存储整数，写代码去重（提示：用 contains 判断）
     }
 }

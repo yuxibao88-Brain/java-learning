@@ -1,11 +1,14 @@
 package stage1_basics;
 
 /**
- * =================================== 📖 Java 学习第六课：字符串（String）
+ * ===================================
+ * 📖 Java 学习第六课：字符串（String）
  * ===================================
  *
- * ⭐ 核心知识（3 个就够）： 1. 比较用 .equals()，不能用 == 2. 常用方法：trim() split() replace()
- * contains() 3. 循环拼接用 StringBuilder，别用 +=
+ * ⭐ 核心知识（3 个就够）：
+ *   1. 比较用 .equals()，不能用 ==
+ *   2. 常用方法：trim() split() replace() contains()
+ *   3. 循环拼接用 StringBuilder，别用 +=
  *
  * 💡 其它方法（charAt/substring/indexOf 等）用到让 AI 帮查
  */
@@ -51,5 +54,11 @@ public class L06_Strings {
         }
         System.out.println("城市: " + sb);
         // 输出：城市: 北京、上海、广州、深圳
+
+        // ========== 🏋️ 动手练习 ==========
+        // 练习 1：给定 String email = "user@example.com"，用 split("@") 提取用户名和域名
+        // 练习 2：给定 String sentence = "  hello world java  "，
+        //   先 trim()，再用 replace() 把 "world" 换成 "Java"，最后打印长度
+        // 练习 3：用 StringBuilder 把 {"a", "b", "c", "d", "e"} 拼成 "a-b-c-d-e"
     }
 }

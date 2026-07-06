@@ -99,4 +99,14 @@ public class L07_Methods {
     static void info(String name, int age) {
         System.out.println("姓名: " + name + "，年龄: " + age);
     }
+
+    // ========== 🏋️ 动手练习 ==========
+    // 练习 1：写一个方法 max(int a, int b) 返回两个数中较大的那个
+    // 练习 2：写一个方法 isEven(int n) 判断一个数是否为偶数，返回 boolean
+    // 练习 3：写一个方法 printStars(int n) 打印 n 行星号三角形
+    //   n=4 时输出：
+    //   *
+    //   **
+    //   ***
+    //   ****
 }
