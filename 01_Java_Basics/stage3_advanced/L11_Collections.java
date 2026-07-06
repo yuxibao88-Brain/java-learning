@@ -3,24 +3,19 @@ package stage3_advanced;
 import java.util.*;
 
 /**
- * ===================================
- * 📖 Java 学习第十一课：集合框架
- * ===================================
+ * L11 集合框架
  *
- * ⭐⭐⭐ 开发中用得最多的课！比数组重要 100 倍！
+ * 开发中用得最多的课！比数组重要 100 倍！
  *
- * ⭐ 核心知识（2 个就够）：
+ * 核心知识：
  *   1. ArrayList：动态数组，增删改查
  *   2. HashMap：键值对，根据 key 查 value
- *
- * 💡 HashSet/TreeMap/LinkedList 等用到让 AI 帮查
  */
 public class L11_Collections {
 
     public static void main(String[] args) {
 
-        // ========== ⭐ 1. ArrayList（最常用！）==========
-        System.out.println("【ArrayList】");
+        // 1. ArrayList（最常用）
 
         List<String> names = new ArrayList<>();
 
@@ -38,11 +33,11 @@ public class L11_Collections {
 
         // 遍历（增强 for 最常用）
         for (String name : names) {
-            System.out.println("  → " + name);
+            System.out.println("  -> " + name);
         }
 
-        // ========== ⭐ 2. HashMap（键值对）==========
-        System.out.println("\n【HashMap】");
+
+        // 2. HashMap（键值对）
 
         Map<String, Integer> scores = new HashMap<>();
 
@@ -59,13 +54,14 @@ public class L11_Collections {
 
         // 遍历 HashMap
         for (Map.Entry<String, Integer> entry : scores.entrySet()) {
-            System.out.println("  " + entry.getKey() + " → " + entry.getValue());
+            System.out.println("  " + entry.getKey() + " -> " + entry.getValue());
         }
 
-        // ========== 🏋️ 动手练习 ==========
-        // 练习 1：用 ArrayList 存储 5 个学生姓名，删除第 2 个，再在开头插入一个新学生
-        // 练习 2：用 HashMap 存储 "语文": 85, "数学": 92, "英语": 78，
-        //   计算总分和平均分，找出最高分的科目
-        // 练习 3：用 ArrayList 存储整数，写代码去重（提示：用 contains 判断）
+
+        // 练习：
+        // 1) 用 ArrayList 存储 5 个学生姓名，删除第 2 个，再在开头插入一个新学生
+        // 2) 用 HashMap 存储 "语文": 85, "数学": 92, "英语": 78，
+        //    计算总分和平均分，找出最高分的科目
+        // 3) 用 ArrayList 存储整数，写代码去重（提示：用 contains 判断）
     }
 }
