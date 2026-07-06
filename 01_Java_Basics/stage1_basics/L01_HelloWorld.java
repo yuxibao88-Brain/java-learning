@@ -20,5 +20,9 @@ public class L01_HelloWorld {
         // 1) 把 "Hello World!" 改成输出你自己的名字
         // 2) 再写 3 行 println，输出你最喜欢的三样东西
         // 3) 试试 System.out.print()（不换行），对比和 println 的区别
+
+        System.out.println("你好，Java 世界1！");
+        System.out.println("开始学 Java！2");
+        System.out.print("你好，Java 世界3！");
     }
 }

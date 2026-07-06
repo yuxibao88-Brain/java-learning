@@ -4,10 +4,10 @@ package stage1_basics;
  * L02 变量与数据类型
  *
  * 核心知识（记住 4 个类型就够）：
- *   - int      整数（年龄、数量、ID）
- *   - double   小数（价格、坐标）
- *   - boolean  真/假（开关、状态）
- *   - String   文本（名字、地址）
+ * - int 整数（年龄、数量、ID）
+ * - double 小数（价格、坐标）
+ * - boolean 真/假（开关、状态）
+ * - String 文本（名字、地址）
  */
 public class L02_Variables {
 
@@ -45,7 +45,17 @@ public class L02_Variables {
 
         // 练习：
         // 1) 定义 4 个变量存储你的个人信息（姓名、年龄、身高、是否学生）
+        String name1 = "baoyuxi";
+        int age1 = 28;
+        double shengao = 173.5;
+        boolean isStudent = false;
+
         // 2) 用 println 拼出一句话："我叫xxx，今年xx岁，身高x.xx米"
+        System.out.println("我叫" + name1 + "，今年" + age1 + "岁，身高" + shengao + "米");
+
         // 3) 试试 (int) 9.99 和 (int) 0.1 的结果，理解"强转丢弃小数"
+        int a = (int) 9.99;
+        int b = (int) 0.1;
+        System.out.println(a + " " + b);
     }
 }
