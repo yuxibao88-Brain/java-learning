@@ -1,14 +1,11 @@
 package stage1_basics;
 
 /**
- * ===================================
- * 📖 Java 学习第六课：字符串（String）
+ * =================================== 📖 Java 学习第六课：字符串（String）
  * ===================================
  *
- * ⭐ 核心知识（3 个就够）：
- *   1. 比较用 .equals()，不能用 ==
- *   2. 常用方法：trim() split() replace() contains()
- *   3. 循环拼接用 StringBuilder，别用 +=
+ * ⭐ 核心知识（3 个就够）： 1. 比较用 .equals()，不能用 == 2. 常用方法：trim() split() replace()
+ * contains() 3. 循环拼接用 StringBuilder，别用 +=
  *
  * 💡 其它方法（charAt/substring/indexOf 等）用到让 AI 帮查
  */
@@ -48,7 +45,9 @@ public class L06_Strings {
         String[] cities = {"北京", "上海", "广州", "深圳"};
         for (int i = 0; i < cities.length; i++) {
             sb.append(cities[i]);
-            if (i < cities.length - 1) sb.append("、");
+            if (i < cities.length - 1) {
+                sb.append("、");
+            }
         }
         System.out.println("城市: " + sb);
         // 输出：城市: 北京、上海、广州、深圳
