@@ -51,7 +51,33 @@ public class L05_Arrays {
 
         // 练习：
         // 1) 找出数组 {34, 12, 56, 78, 45, 23, 89} 中的最大值和最小值
+        int[] arr1 = {34, 12, 56, 78, 45, 23, 89};
+        int max = arr1[0];
+        int min = arr1[0];
+        for (int i = 1; i < arr1.length; i++) {
+            if (arr1[i] > max) max = arr1[i];
+            if (arr1[i] < min) min = arr1[i];
+        }
+        System.out.println("最大值: " + max + "，最小值: " + min);
+
         // 2) 把数组 {1, 2, 3, 4, 5} 反转成 {5, 4, 3, 2, 1}（交换首尾元素）
+        int[] arr2 = {1, 2, 3, 4, 5};
+        int left = 0, right = arr2.length - 1;
+        while (left < right) {
+            int temp = arr2[left];
+            arr2[left] = arr2[right];
+            arr2[right] = temp;
+            left++;
+            right--;
+        }
+        System.out.println("反转后: " + Arrays.toString(arr2));
+
         // 3) 统计数组 {85, 92, 67, 43, 78, 55, 91, 60} 中及格（>=60）的人数
+        int[] arr3 = {85, 92, 67, 43, 78, 55, 91, 60};
+        int count = 0;
+        for (int score : arr3) {
+            if (score >= 60) count++;
+        }
+        System.out.println("及格人数: " + count);
     }
 }

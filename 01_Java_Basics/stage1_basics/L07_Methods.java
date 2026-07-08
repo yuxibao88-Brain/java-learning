@@ -40,6 +40,17 @@ public class L07_Methods {
         info("小明");             // 1个参数版本
         info("小红", 20);        // 2个参数版本
         // Java 自动根据参数类型和个数，选择正确的方法
+
+
+        // 练习：
+        // 1) 写一个方法 max(int a, int b) 返回两个数中较大的那个
+        System.out.println("max(5, 3) = " + max(5, 3));
+
+        // 2) 写一个方法 isEven(int n) 判断一个数是否为偶数，返回 boolean
+        System.out.println("isEven(4) = " + isEven(4) + "，isEven(7) = " + isEven(7));
+
+        // 3) 写一个方法 printStars(int n) 打印 n 行星号三角形
+        printStars(4);
     }
 
 
@@ -92,13 +103,22 @@ public class L07_Methods {
     }
 
 
-    // 练习：
-    // 1) 写一个方法 max(int a, int b) 返回两个数中较大的那个
-    // 2) 写一个方法 isEven(int n) 判断一个数是否为偶数，返回 boolean
-    // 3) 写一个方法 printStars(int n) 打印 n 行星号三角形
-    //      n=4 时输出：
-    //      *
-    //      **
-    //      ***
-    //      ****
+    // -- 练习方法 --
+
+    static int max(int a, int b) {
+        return a > b ? a : b;
+    }
+
+    static boolean isEven(int n) {
+        return n % 2 == 0;
+    }
+
+    static void printStars(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
 }

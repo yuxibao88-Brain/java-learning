@@ -53,8 +53,23 @@ public class L06_Strings {
 
         // 练习：
         // 1) 给定 String email = "user@example.com"，用 split("@") 提取用户名和域名
+        String email = "user@example.com";
+        String[] parts = email.split("@");
+        System.out.println("用户名: " + parts[0] + "，域名: " + parts[1]);
+
         // 2) 给定 String sentence = "  hello world java  "，
         //    先 trim()，再用 replace() 把 "world" 换成 "Java"，最后打印长度
+        String sentence = "  hello world java  ";
+        String fixed = sentence.trim().replace("world", "Java");
+        System.out.println("处理后: " + fixed + "，长度: " + fixed.length());
+
         // 3) 用 StringBuilder 把 {"a", "b", "c", "d", "e"} 拼成 "a-b-c-d-e"
+        String[] arr = {"a", "b", "c", "d", "e"};
+        StringBuilder sb2 = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            sb2.append(arr[i]);
+            if (i < arr.length - 1) sb2.append("-");
+        }
+        System.out.println("拼接结果: " + sb2);
     }
 }

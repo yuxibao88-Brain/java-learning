@@ -4,9 +4,9 @@ package stage1_basics;
  * L04 循环
  *
  * 核心知识：
- *   1. for 循环：for (int i = 0; i < n; i++)
- *   2. 增强 for：for (元素 : 数组/集合)  <- 开发最常用
- *   3. break 跳出循环 / continue 跳过本次
+ * 1. for 循环：for (int i = 0; i < n; i++)
+ * 2. 增强 for：for (元素 : 数组/集合) <- 开发最常用
+ * 3. break 跳出循环 / continue 跳过本次
  */
 public class L04_Loops {
 
@@ -55,10 +55,27 @@ public class L04_Loops {
 
         // 练习：
         // 1) 打印 9x9 乘法表（提示：嵌套 for 循环）
-        //      1x1=1
-        //      1x2=2  2x2=4
-        //      1x3=3  2x3=6  3x3=9
+        System.out.println("\n=== 练习1: 9x9 乘法表 ===");
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + "x" + i + "=" + (i * j) + "  ");
+            }
+            System.out.println();
+        }
+
         // 2) 用 for 循环计算 10 的阶乘（10! = 10 x 9 x 8 x ... x 1）
+        System.out.println("\n=== 练习2: 10的阶乘 ===");
+        long factorial = 1;
+        for (int i = 10; i >= 1; i--) {
+            factorial *= i;
+        }
+        System.out.println("10! = " + factorial);
+
         // 3) 用增强 for 遍历 {"Java", "Python", "Go", "Rust"}，打印每个语言和索引
+        System.out.println("\n=== 练习3: 遍历数组带索引 ===");
+        String[] languages = {"Java", "Python", "Go", "Rust"};
+        for (int i = 0; i < languages.length; i++) {
+            System.out.println(i + ": " + languages[i]);
+        }
     }
 }
